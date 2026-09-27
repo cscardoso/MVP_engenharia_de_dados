@@ -1,0 +1,54 @@
+df_2018 = (
+    spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("/Workspace/MVP/data/raw/2018.csv")
+)
+
+df_2019 = (
+    spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("/Workspace/MVP/data/raw/2019.csv")
+)
+
+df_2020 = (
+    spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("/Workspace/MVP/data/raw/2020.csv")
+)
+
+df_2021 = (
+    spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("/Workspace/MVP/data/raw/2021.csv")
+)
+
+df_2022 = (
+    spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("/Workspace/MVP/data/raw/2022.csv")
+)
+
+df_2023 = (
+    spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("/Workspace/MVP/data/raw/2023.csv")
+)
+
+df_2024 = (
+    spark.read
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .csv("/Workspace/MVP/data/raw/2024.csv")
+)
+
+
+df_2018.write \
+  .format("delta") \
+  .mode("overwrite") \
+  .saveAsTable("workspace.mvp.raw")
